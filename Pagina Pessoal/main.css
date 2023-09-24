@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "CourierPrime";
+    src: url('src/fonts/CourierPrime-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --corFundoHeader: transparent;
+    --corContainer: #F5F5F7;
+    --corLetraButton: #dfdfdf;
+    --corLetraButtonEscura: #000000b2;
+    --corButton: #3a3a3a;
+    --corSombra: #00000059;
+    --corSombraEscura: #00000080;
+
+    --fonte-padrao: 'CourierPrime', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fonte-padrao);
+    box-sizing: border-box;
+}
+
+body {
+    height: 3000px;
+}
+
+header {
+    background-color: var(--corFundoHeader);
+    backdrop-filter: blur(5px); /* quanto menos pxs mais nitido o fundo */
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0px 7px 7px var(--corSombra);
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+#link_logo {
+    font-size: 0;
+}
+
+#link_logo img {
+    height: 100px;
+    filter: grayscale(100%);
+}
+
+#links_cabecalho a {
+    margin: 10px 0 0 0;
+    padding: 10px;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--corButton);
+}
+
+#links_cabecalho a:hover {
+    border: 1px solid var(--corSombraEscura);
+    border-radius: 2rem;
+    color: var(--corLetraButton);
+    background-color: var(--corButton);
+    transition: 0.6s;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--corContainer);
+}
+
+main {
+    padding-top: 100px;
+}
+
+section {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#aplicativos {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 10px auto;
+}
+
+.app {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.app a {
+    color: var(--corLetraButtonEscura);
+    padding: 20px;
+    background-color: var(--corContainer);
+    text-decoration: none;
+    border: 1px solid var(--corLetraButtonEscura);
+    border-radius: 2em;
+}
+
+.app a:hover {
+    background-color: var(--corButton);
+    color: var(--corLetraButton);
+    border: 1px solid transparent;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 855px) {
+        header {
+            height: 220px;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            text-align: center;
+            width: 120px;
+        }
+
+        #links_cabecalho a {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        main {
+            padding-top: 220px;
+        }
+}
